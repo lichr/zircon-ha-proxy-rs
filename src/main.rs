@@ -1,6 +1,18 @@
-use axum::{routing::get, Router};
+
+use axum::{
+    routing::get,
+    Router,
+};
 
 mod zircon_proxy;
+
+// async fn proxy(req: Request<Body>) -> Result<Response<Body>, hyper::Error> {
+//     let uri = format!("http://remote-server.com{}", req.uri().path_and_query().unwrap().to_string());
+//     let mut proxied_req = req;
+//     *proxied_req.uri_mut() = uri.parse().unwrap();
+//     let client = Client::new();
+//     client.request(proxied_req).await
+// }
 
 #[tokio::main]
 async fn main() {
